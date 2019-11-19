@@ -1,5 +1,5 @@
 var HDWalletProvider = require("truffle-hdwallet-provider");
-import { MNEMONIC, API_KEY } from "../secrets/secrets";
+require('dotenv').config()
 
 module.exports = (() => {
   return {
@@ -22,7 +22,7 @@ module.exports = (() => {
       },
       ropsten: {
         provider: function () {
-          return new HDWalletProvider(MNEMONIC, "https://ropsten.infura.io/v3/" + API_KEY)
+          return new HDWalletProvider(process.env.MNEMONIC, "https://ropsten.infura.io/v3/" + process.env.API_KEY)
         },
         network_id: 3,
         gas: 4000000      //make sure this gas allocation isn't over 4M, which is the max
