@@ -29,14 +29,14 @@ module.exports = (() => {
       },
       rinkeby: {
         provider: function () {
-          return new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/v3/" + process.env.API_KEY);
+          return new HDWalletProvider(process.env.MNEMONIC, "https://rinkeby.infura.io/v3/" + process.env.API_KEY);
         },
         network_id: 4,
         gas: 4000000      //make sure this gas allocation isn't over 4M, which is the max
       },
       kovan: {
         provider: function () {
-          return new HDWalletProvider(mnemonic, "https://kovan.infura.io/v3/" + process.env.API_KEY);
+          return new HDWalletProvider(process.env.MNEMONIC, "https://kovan.infura.io/v3/" + process.env.API_KEY);
         },
         network_id: 42,
         gas: 4000000      //make sure this gas allocation isn't over 4M, which is the max
