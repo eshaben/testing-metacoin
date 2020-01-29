@@ -14,8 +14,3 @@ testtest
 testtest
 test
 test
-testtest
-test
-test
-test
-test
