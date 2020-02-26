@@ -1,2 +1,16 @@
 language: node_js
 node_js: 10.15.1
+
+install:
+    - npm install -g truffle
+    - npm install -g ganache-cli
+    - npm install
+
+script:
+    -npm run lint
+    -truffle migrate
+    -truffle test
+    -npm run stop
+
+after_script:
+    -npm run coverage && cat coverage/lcov.info | coveralls
