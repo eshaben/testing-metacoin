@@ -9,5 +9,3 @@ test
 test
 test
 test
-gdxg
-yrdy
