@@ -9,10 +9,10 @@ install:
     - npm install
 
 script:
-    -npm run lint
-    -truffle migrate
-    -truffle test
-    -npm run stop
+    - npm run lint
+    - truffle migrate
+    - truffle test
+    - npm run stop
 
 after_script:
-    -npm run coverage && cat coverage/lcov.info | coveralls
+    - npm run coverage && cat coverage/lcov.info | coveralls
