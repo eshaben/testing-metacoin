@@ -5,23 +5,31 @@ install:
   - npm install -g ganache-cli
   - npm install
     
-matrix: 
- include: 
-   - node_js: 8
-     env: FOO=foo
-   - node_js: 10.15.1
-     env: BAR=bar
-     env: FOO=foo
+matrix:
+  fast_finish: true
+  include:
+    - node_js: 8
+      env: FABRICEVM=true
+    - node_js: 8
+      env: COVERAGE=true
+    - if: |
+        branch = develop AND \
+        type = push
+      node_js: 10
+      env: COLONY=true
+  allow_failures:
+    - node_js: 8
+      env: COVERAGE=true
+      
+cache:
+  directories:
+    - node_modules
 
 script:
   - npm run lint
 #     - truffle migrate
 #     - truffle test
 #     - npm run stop
-
-cache:
-  directories:
-    - node_modules
 
 after_script:
   - npm run coverage && cat coverage/lcov.info | coveralls
