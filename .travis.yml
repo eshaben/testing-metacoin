@@ -11,6 +11,7 @@ matrix:
      env: FOO=foo
    - node_js: 10.15.1
      env: BAR=bar
+     env: FOO=foo
 
 script:
   - npm run lint
