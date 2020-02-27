@@ -1,18 +1,24 @@
 language: node_js
-node_js: 
-    - 10.15.1
-    - 8
 
 install:
-    - npm install -g truffle
-    - npm install -g ganache-cli
-    - npm install
+  - npm install -g truffle
+  - npm install -g ganache-cli
+  - npm install
+    
+matrix: 
+ include: 
+   - node_js: 8
+   - node_js: 10.15.1
 
 script:
-    - npm run lint
+  - npm run lint
 #     - truffle migrate
 #     - truffle test
 #     - npm run stop
 
+cache:
+  directories:
+    - node_modules
+
 after_script:
-    - npm run coverage && cat coverage/lcov.info | coveralls
+  - npm run coverage && cat coverage/lcov.info | coveralls
