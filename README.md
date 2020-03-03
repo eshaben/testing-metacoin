@@ -7,11 +7,3 @@ test
 testtest
 test
 test
-test
-test
-test
-testresr
-test
-test
-test
-test
