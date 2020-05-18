@@ -38,3 +38,20 @@ jobs:
     - run: npm run lint
       env:
         CI: true
+        
+        
+  my_third_job:
+    name: heyyyy
+    runs-on: macos-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - run: npm install
+      - run: npm run build --if-present
+      - run: npm run lint
+        env:
+          CI: true
