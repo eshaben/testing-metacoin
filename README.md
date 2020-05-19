@@ -11,5 +11,3 @@ test
 test
 test
 test
-testtest
-testtest
