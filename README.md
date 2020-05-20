@@ -10,6 +10,3 @@ test
 test
 testt
 test
-test
-tt
-test
